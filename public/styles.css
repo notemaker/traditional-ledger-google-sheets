@@ -12,3 +12,174 @@
 /* User-defined labels and large totals remain readable without horizontal overflow. */
 .legend-name{min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.legend-amount,.legend-percent{flex-shrink:0}.summary-amount{min-width:0}.summary-amount strong{font-size:clamp(19px,2.2vw,31px);overflow-wrap:anywhere}.balance-card .summary-amount{position:relative;z-index:1}.category-picker{max-height:235px;overflow:auto}.record-sub span{white-space:nowrap}.standard-dialog .setup-downloads{flex-wrap:wrap;row-gap:12px}
 @media(max-width:760px){.summary-amount strong{font-size:clamp(19px,6.2vw,27px)}.balance-card .summary-amount strong{font-size:clamp(20px,6.6vw,29px)}.balance-card{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr)}.balance-card .summary-amount{justify-content:flex-end}.category-picker{max-height:230px}}
+
+/* === 手機大字版：完整基礎樣式之後套用，桌面版不變 === */
+@media (max-width: 760px) {
+  :root { font-size: 18px; }
+  body { line-height: 1.6; }
+  .content { padding: 26px 18px 120px; }
+  .brand > span { font-size: 20px; }
+  .brand small { font-size: 11px; }
+  .sidebar { padding: 16px 18px; gap: 8px; }
+  .sidebar nav .nav-item { width: 48px; height: 48px; }
+  .sidebar nav .nav-item svg { width: 24px; height: 24px; }
+  .topbar { height: auto; min-height: 72px; padding: 12px 18px; gap: 12px; flex-wrap: wrap; }
+  .breadcrumb { font-size: 16px; color: #596b5c; }
+  .breadcrumb strong { color: #405749; }
+  .connection-status { font-size: 18px; min-height: 48px; padding: 10px 12px; color: #405b48; }
+  .connection-status svg { width: 20px; height: 20px; }
+  .page-heading { flex-direction: column; align-items: flex-start; gap: 18px; }
+  h1 { font-size: 34px; line-height: 1.3; }
+  .eyebrow { font-size: 12px; color: #607553; }
+  .page-heading p { font-size: 18px; color: #586b54; }
+
+  /* 指定項目 1：首頁「新增記錄」 */
+  .page-heading > .button { width: 100%; min-height: 56px; font-size: 20px; font-weight: 600; padding: 12px 18px; }
+  .button { font-size: 18px; min-height: 52px; padding: 12px 18px; line-height: 1.4; white-space: normal; }
+  .button svg { width: 22px; height: 22px; }
+  .icon-button { width: 48px; height: 48px; flex-shrink: 0; }
+  .icon-button svg { width: 24px; height: 24px; }
+  .text-button { font-size: 18px; min-height: 48px; white-space: normal; color: #4b673e; }
+  .text-button svg { width: 22px; height: 22px; }
+  .mode-banner { display: grid; grid-template-columns: 24px minmax(0, 1fr); align-items: start; font-size: 18px; line-height: 1.7; padding: 16px; gap: 10px; color: #4e6040; }
+  .mode-banner small { display: block; font-size: 16px; line-height: 1.7; margin: 5px 0 0; color: #586849; }
+  .mode-banner button { grid-column: 2; justify-self: start; font-size: 18px; min-height: 48px; margin-left: 0; color: #3e5b2c; }
+  .month-heading { flex-wrap: wrap; gap: 14px; }
+  .month-heading h2 { font-size: 22px; }
+  .month-control label { font-size: 18px; padding: 0 8px; }
+  .month-control > button { width: 44px; height: 48px; }
+  .month-control svg { width: 22px; height: 22px; }
+  .summary-grid { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+  .summary-card { padding: 20px; }
+  .summary-top { font-size: 20px; color: #52674d; }
+  .summary-icon { width: 38px; height: 38px; }
+  .summary-icon svg { width: 23px; height: 23px; }
+  .summary-amount { gap: 9px; margin: 14px 0 12px; flex-wrap: wrap; }
+  .summary-amount strong { font-size: 34px; line-height: 1.3; letter-spacing: -0.5px; overflow-wrap: anywhere; }
+  .summary-amount small { font-size: 18px; color: #586c52; }
+  .summary-foot { font-size: 16px; line-height: 1.6; color: #5c7154; }
+
+  /* 指定項目 3：「本月結餘」，由 14px 放大為 22px */
+  .balance-card { display: block; padding: 20px; }
+  .balance-card .summary-top { font-size: 22px; flex-direction: row; justify-content: space-between; }
+  .balance-card .summary-icon { width: 38px; height: 38px; }
+  .balance-card .summary-amount { margin: 14px 0 12px; justify-content: flex-start; }
+  .balance-card .summary-amount strong { font-size: 36px; }
+  .balance-card .summary-amount small { color: #dbe8d4; }
+  .balance-card .summary-foot { font-size: 16px; color: #e0ebd8; margin-top: 0; }
+  .balance-card .summary-foot svg { width: 18px; height: 18px; }
+  .panel-heading { padding: 20px 18px; gap: 14px; flex-wrap: wrap; }
+
+  /* 指定項目 4：「每一筆日常」，由 17px 放大為 24px */
+  .panel-heading h2 { font-size: 24px; line-height: 1.4; }
+  .panel-heading > div > span { font-size: 16px; color: #5f7358; }
+  .panel-actions { gap: 12px; flex-wrap: wrap; }
+  .records-panel .panel-actions { width: 100%; }
+  .list-toolbar { padding: 0 18px 20px; gap: 14px; }
+  .tabs { width: 100%; gap: 6px; }
+  .tabs button { flex: 1; font-size: 18px; min-height: 48px; padding: 10px; color: #54694a; }
+  .search-field { width: 100%; min-width: 0; height: auto; min-height: 52px; padding: 10px 12px; }
+  .search-field input { font-size: 18px; min-height: 30px; }
+  .search-field input::placeholder { color: #68785c; }
+  .search-field svg { width: 22px; height: 22px; }
+  .record-row { grid-template-columns: minmax(0, 1fr) auto 48px; grid-template-rows: auto auto; gap: 12px 8px; padding: 18px; min-height: 116px; }
+  .record-main { grid-column: 1 / -1; grid-row: 1; padding-right: 54px; gap: 12px; align-items: flex-start; }
+  .category-icon { width: 48px; height: 48px; }
+  .category-icon svg { width: 24px; height: 24px; }
+  .record-title { font-size: 20px; line-height: 1.5; white-space: normal; overflow: visible; text-overflow: clip; overflow-wrap: anywhere; }
+  .record-sub { font-size: 16px; line-height: 1.6; margin-top: 5px; color: #65775b; white-space: normal; overflow: visible; overflow-wrap: anywhere; }
+  .record-sub span { white-space: normal; }
+  .record-amount { grid-column: 1; grid-row: 2; font-size: 22px; text-align: left; white-space: normal; overflow-wrap: anywhere; min-width: 0; color: #3c5236; }
+  .record-amount.is-income { color: #3e713c; }
+  .record-date { grid-column: 2; grid-row: 2; font-size: 16px; margin: 0; align-self: center; color: #5f7254; }
+  .row-menu-button { grid-column: 3; grid-row: 1 / 3; width: 48px; height: 52px; margin: 0; align-self: start; }
+  .row-menu-button svg { width: 24px; height: 24px; }
+  .row-popover { min-width: 132px; padding: 5px; }
+  .row-popover button { min-height: 48px; font-size: 18px; padding: 10px; }
+  .row-popover svg { width: 22px; height: 22px; }
+  .list-footer { flex-direction: column; align-items: flex-start; font-size: 16px; padding: 18px; gap: 8px; line-height: 1.7; color: #5d7151; overflow-wrap: anywhere; }
+  .analysis-panel { display: flex; flex-direction: column; }
+  .analysis-panel .panel-heading { padding: 20px 18px 0; }
+  .donut-wrap { padding: 26px 18px; }
+  .donut { width: 186px; height: 186px; }
+  .donut-center > span { font-size: 16px; color: #5c7250; }
+  .donut-center strong { font-size: 28px; max-width: 150px; text-align: center; overflow-wrap: anywhere; line-height: 1.2; }
+  .donut-center small { font-size: 14px; color: #647957; }
+  .category-legend { width: 100%; padding: 0 18px 22px; gap: 16px; }
+  .legend-row { font-size: 18px; color: #536d44; gap: 8px; flex-wrap: wrap; }
+  .legend-name { min-width: 0; white-space: normal; overflow-wrap: anywhere; flex: 1; }
+  .legend-amount { font-size: 18px; color: #405d32; }
+  .legend-percent { font-size: 16px; color: #647b53; width: 42px; }
+  .legend-dot { width: 9px; height: 9px; }
+  .analysis-foot { font-size: 16px; line-height: 1.7; padding: 16px 18px; color: #627650; align-items: flex-start; }
+  .analysis-foot svg { width: 18px; height: 18px; }
+  .quiet-heading { font-size: 20px; color: #47652f; }
+  .quiet-card p { font-size: 18px; line-height: 1.9; color: #526b41; }
+  .three-steps { font-size: 16px; flex-wrap: wrap; color: #526b41; }
+  .quiet-card .text-button { font-size: 20px; }
+  .page-footer { font-size: 16px; color: #647657; line-height: 1.8; overflow-wrap: anywhere; }
+
+  /* 指定項目 2：手機右下角「記一筆」，由 16px 放大為 22px */
+  .mobile-add { font-size: 22px; font-weight: 600; min-height: 60px; padding: 15px 24px; bottom: calc(18px + env(safe-area-inset-bottom)); right: 18px; }
+  .mobile-add svg { width: 26px; height: 26px; }
+  .toast { font-size: 18px; line-height: 1.7; bottom: calc(98px + env(safe-area-inset-bottom)); max-width: calc(100% - 32px); width: max-content; padding: 14px 18px; }
+  .sheet-form { padding: 12px 22px max(24px, env(safe-area-inset-bottom)); }
+  .dialog-heading { gap: 8px; }
+  .dialog-heading h2 { font-size: 28px; line-height: 1.4; }
+  .field-label, .amount-label, .settings-dialog .field-label { font-size: 20px; color: #4a643b; }
+  .field-label button { font-size: 18px; min-height: 44px; color: #4d6c3a; }
+  .optional, .amount-label span { font-size: 16px; color: #667957; }
+  .amount-input-wrap > span { font-size: 24px; color: #607d48; }
+  .amount-input-wrap input { font-size: 48px; min-height: 64px; }
+  .type-switch button { font-size: 20px; min-height: 52px; color: #586f48; }
+  .type-switch svg { width: 22px; height: 22px; }
+  .category-picker { grid-template-columns: repeat(3, minmax(0, 1fr)); max-height: 260px; }
+  .category-choice { font-size: 18px; min-height: 82px; padding: 10px 4px; color: #567242; line-height: 1.45; }
+  .category-choice svg { width: 26px; height: 26px; }
+  .form-input { font-size: 20px; min-height: 56px; padding: 13px; min-width: 0; }
+  .form-input::placeholder { color: #657d50; }
+  .full-width { font-size: 20px; min-height: 56px; margin-top: 22px; }
+  .form-hint { font-size: 16px; line-height: 1.8; color: #627b50; }
+  .form-error, .inline-status { font-size: 18px; line-height: 1.8; padding: 14px 16px; color: #8a4a32; overflow-wrap: anywhere; }
+  .standard-dialog { padding: 22px; max-width: calc(100% - 24px); max-height: 92dvh; }
+  .dialog-description { font-size: 18px; line-height: 1.8; color: #5d7650; }
+  .managed-category { font-size: 18px; padding: 12px; color: #4f6d39; }
+  .managed-category small { font-size: 16px; color: #667e52; }
+  .managed-category button { width: 44px; min-height: 44px; }
+  .managed-category button svg { width: 22px; height: 22px; }
+  .category-create { flex-direction: column; gap: 12px; }
+  .category-create button { font-size: 20px; min-height: 52px; }
+  .setup-steps { padding: 16px 12px; }
+  .setup-steps b { font-size: 18px; }
+  .setup-steps span { font-size: 20px; color: #4f6b3f; }
+  .setup-steps small { font-size: 16px; line-height: 1.8; color: #657c53; }
+  .setup-downloads { flex-wrap: wrap; gap: 10px 16px; }
+  .privacy-warning { font-size: 16px; line-height: 1.8; color: #766545; }
+  .privacy-warning svg { width: 20px; height: 20px; }
+  .disconnect-button { font-size: 18px; min-height: 48px; color: #875838; }
+  .delete-dialog h2 { font-size: 26px; line-height: 1.5; }
+  #deleteDescription { font-size: 18px; overflow-wrap: anywhere; }
+  .connection-status { min-width: 0; max-width: 100%; white-space: normal; }
+  .dialog-buttons { flex-direction: column; gap: 12px; }
+  .dialog-buttons button { font-size: 20px; min-height: 56px; }
+  .empty-state { font-size: 20px; }
+  .empty-state p { font-size: 18px; line-height: 1.8; color: #647b51; }
+  .noscript-message { font-size: 18px; line-height: 1.8; }
+}
+
+@media (max-width: 380px) {
+  .content { padding-left: 14px; padding-right: 14px; }
+  .sidebar { padding-left: 14px; padding-right: 14px; }
+  .brand > span { font-size: 19px; }
+  .brand { gap: 7px; }
+  .month-control label { font-size: 18px; gap: 6px; padding: 0 5px; }
+  .summary-card { padding: 18px; }
+  .record-row { padding: 16px 14px; }
+  .record-main { gap: 10px; }
+  .record-title { font-size: 20px; }
+  .record-amount { font-size: 22px; }
+  .summary-top { font-size: 20px; }
+  .summary-foot { font-size: 16px; }
+  .balance-card .summary-foot { font-size: 16px; }
+  .sheet-form { padding-left: 18px; padding-right: 18px; }
+}
